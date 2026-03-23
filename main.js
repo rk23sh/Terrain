@@ -43,12 +43,32 @@ const plane = new THREE.Mesh(
         color: 0x008800,
         side: THREE.DoubleSide,
         wireframe: true,
-        displacementMap: disMap
+        displacementMap: disMap,
+        displacementScale: 1.5
     })
 );
 plane.rotateX( -Math.PI / 2);
 plane.position.y = -0.5;
 scene.add(plane);
+
+// applying shaders: 
+const material = new THREE.ShaderMaterial( {
+    uniforms: {
+        time: { value: 1.0 },
+        resolution: { value: new THREE.Vector2() }
+    },
+    vertexShader: document.getElementById('vertexShader').textContent,
+    fragmentShader: document.getElementById('frameShader').textContent
+});
+
+
+
+
+
+
+
+
+
 
 
 
