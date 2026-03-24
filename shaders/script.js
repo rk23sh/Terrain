@@ -47,8 +47,8 @@ geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
 async function main() {
     // 1. Wait for the files to actually download
-    const vsResponse = await fetch("./vs.glsl");
-    const fsResponse = await fetch("./fs.glsl");
+    const vsResponse = await fetch("./vs.vert");
+    const fsResponse = await fetch("./fs.frag");
     const vsText = await vsResponse.text();
     const fsText = await fsResponse.text();
 
